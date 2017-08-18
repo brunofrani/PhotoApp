@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PhotoApp</string>
+    <string name="buton_name1">Take Photo</string>
+    <string name="activity_button">Go to Photo</string>
+</resources>
