@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.brunofrani.photoapp.MainActivity">
+    tools:context="com.example.brunofrani.photoapp.activity.LoginActivity">
 
     <Button
         android:layout_width="wrap_content"
@@ -13,8 +13,42 @@
         android:text="@string/activity_button"
         tools:layout_editor_absoluteY="211dp"
         tools:layout_editor_absoluteX="134dp"
+        android:layout_marginBottom="123dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/user_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/gotophoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="146dp"
+        android:ems="10"
+        android:hint="username"
+        android:inputType="textPersonName"
+       />
+
+    <EditText
+        android:id="@+id/password_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/user_text"
+        android:layout_alignStart="@+id/user_text"
+        android:layout_alignTop="@+id/user_text"
+        android:layout_marginTop="62dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="password"
+        />
+
+    <TextView
+        android:id="@+id/register_text"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="131dp" />
+        android:layout_marginBottom="10dp"
+        android:text="Register" />
 
 </RelativeLayout>

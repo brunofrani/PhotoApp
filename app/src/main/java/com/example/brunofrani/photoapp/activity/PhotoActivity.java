@@ -1,4 +1,4 @@
-package com.example.brunofrani.photoapp;
+package com.example.brunofrani.photoapp.activity;
 
 
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.brunofrani.photoapp.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

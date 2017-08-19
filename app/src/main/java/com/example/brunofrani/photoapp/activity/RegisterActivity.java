@@ -1,9 +1,11 @@
-package com.example.brunofrani.photoapp;
+package com.example.brunofrani.photoapp.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Main2Activity extends AppCompatActivity {
+import com.example.brunofrani.photoapp.R;
+
+public class RegisterActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
