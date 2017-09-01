@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -23,6 +27,7 @@ public class RegisterActivity extends AppCompatActivity {
     EditText password;
     EditText username;
     FirebaseAuth sauth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
 
         signup = (Button) findViewById(R.id.button_signup);
 
+
+
         sauth = FirebaseAuth.getInstance();
+
+
+
+
+
 
 
         signup.setOnClickListener(new View.OnClickListener() {
@@ -71,6 +83,18 @@ public class RegisterActivity extends AppCompatActivity {
                                     } else {
                                         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                                         finish();
+
+                                        String uid = String.valueOf(getUid());
+                                        Toast.makeText(RegisterActivity.this, uid +
+                                                "" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+
+                                        Log.d("tag",uid);
+                                        FirebaseStorage storage=FirebaseStorage.getInstance();
+                                        StorageReference ref = storage.getReference(uid);
+
+                                        Toast.makeText(RegisterActivity.this, "folder created" +
+                                                "" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+
                                     }
                                 }
                             });
@@ -86,5 +110,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
+    public String getUid() {
+        return FirebaseAuth.getInstance().getCurrentUser().getUid();
+    }
 
 }
